@@ -1,0 +1,317 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#000;
+    color:#fff;
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+}
+
+/* COVER */
+
+#cover{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.small-text{
+    letter-spacing:10px;
+    font-size:14px;
+    color:#bdbdbd;
+    margin-bottom:20px;
+}
+
+#cover h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:4rem;
+    font-weight:600;
+    margin-bottom:25px;
+}
+
+.line{
+    width:180px;
+    height:1px;
+    background:white;
+    margin:10px 0 30px;
+}
+
+#cover h2{
+    font-weight:300;
+    font-size:2rem;
+    margin-bottom:50px;
+}
+
+#openBtn{
+    border:none;
+    background:white;
+    color:black;
+    padding:18px 40px;
+    border-radius:50px;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#openBtn:hover{
+    transform:translateY(-3px);
+}
+
+/* MAIN */
+
+#mainContent{
+    display:none;
+    animation:fadeIn 1s ease;
+}
+
+/* GALLERY */
+
+.gallery{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.gallery h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:3rem;
+    margin-bottom:50px;
+}
+
+.slider{
+    position:relative;
+    width:320px;
+    height:430px;
+    margin:auto;
+}
+
+.slide{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:25px;
+    opacity:0;
+    transition:1s;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+.dots{
+    margin-top:25px;
+}
+
+.dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#555;
+    display:inline-block;
+    margin:0 5px;
+}
+
+.dot.active{
+    background:white;
+}
+
+/* ENVELOPE */
+
+.envelope-section{
+    padding:80px 20px;
+    display:flex;
+    justify-content:center;
+}
+
+.envelope{
+    width:330px;
+    height:220px;
+    cursor:pointer;
+    position:relative;
+}
+
+.envelope-body{
+    width:100%;
+    height:100%;
+    background:white;
+    color:black;
+    border-radius:12px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 0 35px rgba(255,255,255,.12);
+}
+
+.envelope-body span{
+    font-size:30px;
+}
+
+.envelope-body h3{
+    margin-top:15px;
+}
+
+.envelope-top{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:110px;
+    background:#ececec;
+    clip-path:polygon(0 0,100% 0,50% 100%);
+    transform-origin:top;
+    transition:.8s;
+}
+
+.envelope.open .envelope-top{
+    transform:rotateX(180deg);
+}
+
+/* LETTER */
+
+.letter-section{
+    display:none;
+    padding:20px 20px 100px;
+}
+
+.letter{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    color:black;
+    border-radius:25px;
+    padding:40px 30px;
+    line-height:2;
+}
+
+.letter h2{
+    text-align:center;
+    margin-bottom:30px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:2.5rem;
+}
+
+.letter p{
+    margin-bottom:18px;
+}
+
+.signature{
+    margin-top:30px;
+    text-align:right;
+    font-weight:600;
+}
+
+/* ENDING */
+
+.ending{
+    text-align:center;
+    padding:120px 20px;
+}
+
+.ending h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:3rem;
+    max-width:700px;
+    margin:auto;
+}
+
+.ending p{
+    margin-top:40px;
+    color:#bdbdbd;
+}
+
+.ending h3{
+    margin-top:15px;
+    font-size:2rem;
+    font-weight:400;
+}
+
+/* FALLING HEARTS */
+
+.falling{
+    position:fixed;
+    top:-50px;
+    z-index:9999;
+    pointer-events:none;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-50px) rotate(0deg);
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+#cover h1{
+    font-size:3rem;
+}
+
+#cover h2{
+    font-size:1.8rem;
+}
+
+.gallery h2{
+    font-size:2.4rem;
+}
+
+.slider{
+    width:300px;
+    height:400px;
+}
+
+.envelope{
+    width:300px;
+    height:200px;
+}
+
+.letter{
+    padding:30px 20px;
+}
+
+.letter h2{
+    font-size:2rem;
+}
+
+.ending h2{
+    font-size:2.4rem;
+}
+
+  }
